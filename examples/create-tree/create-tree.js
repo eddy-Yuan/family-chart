@@ -63,23 +63,23 @@ import {Form} from "../../src/view/elements/Form.js"
 })();
 
 function firstNode() {
-  return [{id: '0', rels: {}, data: {'first name': 'Name', 'last name': "Surname", 'birthday': 1970,
+  return [{id: '0', rels: {}, data: {'last name': "Surname", 'first name': 'Name', 'birthday': 1970,
       avatar: 'https://static8.depositphotos.com/1009634/988/v/950/depositphotos_9883921-stock-illustration-no-user-profile-picture.jpg', gender: "M"}}]
 }
 
 function cardEditParams() {
   return [
-    {type: 'text', placeholder: 'first name', key: 'first name'},
     {type: 'text', placeholder: 'last name', key: 'last name'},
+    {type: 'text', placeholder: 'first name', key: 'first name'},
     {type: 'text', placeholder: 'birthday', key: 'birthday'},
     {type: 'text', placeholder: 'avatar', key: 'avatar'}
   ]
 }
 
 function cardDisplay() {
-  const d1 = d => `${d.data['first name'] || ''} ${d.data['last name'] || ''}`,
+  const d1 = d => `${d.data['last name'] || ''} ${d.data['first name'] || ''}`,
     d2 = d => `${d.data['birthday'] || ''}`
-  d1.create_form = "{first name} {last name}"
+  d1.create_form = "{last name} {first name} "
   d2.create_form = "{birthday}"
 
   return [d1, d2]
